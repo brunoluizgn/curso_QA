@@ -1,0 +1,14 @@
+.title-pink {
+    color: rgb(234, 0, 255);
+}
+
+body {
+    background-color: rgb(82, 82, 23);
+}
+
+#text-green{
+    color: green;
+}
+#text-yellow{
+    color: yellow;
+}

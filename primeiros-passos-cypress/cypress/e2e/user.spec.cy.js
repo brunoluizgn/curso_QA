@@ -12,6 +12,7 @@ describe('Orange HRM Tests', () => {
       firstNameField: "[name='firstName']",
       lastNameField: "[name='lastName']",
       generiField: ".oxd-input--active",
+      genericCombobox: ".oxd-select-text-input",
       dataField: "[placeholder='yyyy-dd-mm']",
       saveButton: ".oxd-button"
     }
@@ -33,7 +34,11 @@ describe('Orange HRM Tests', () => {
       cy.get(selectorsList.dataField).eq(0).clear().type('2025-03-10')
       cy.get(selectorsList.saveButton).eq(0).click()
       cy.get('body').should('contain', 'Successfully Updated')
-      
+      cy.get(selectorsList.genericCombobox).eq(0).click()
+      cy.get('.oxd-select-dropdown > :nth-child(2)').click()  
+      cy.get(selectorsList.genericCombobox).eq(1).click() 
+      cy.get('.oxd-select-dropdown > :nth-child(3)').click()
+        
     })
 
     it('login-Fail', () => {

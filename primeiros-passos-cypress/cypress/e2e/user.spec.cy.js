@@ -13,6 +13,8 @@ describe('Orange HRM Tests', () => {
       lastNameField: "[name='lastName']",
       generiField: ".oxd-input--active",
       genericCombobox: ".oxd-select-text-input",
+      secondItemCombobox:".oxd-select-dropdown > :nth-child(2)",
+      thirdItemCombobox: ".oxd-select-dropdown > :nth-child(3)",
       dataField: "[placeholder='yyyy-dd-mm']",
       saveButton: ".oxd-button"
     }
@@ -35,9 +37,11 @@ describe('Orange HRM Tests', () => {
       cy.get(selectorsList.saveButton).eq(0).click()
       cy.get('body').should('contain', 'Successfully Updated')
       cy.get(selectorsList.genericCombobox).eq(0).click()
-      cy.get('.oxd-select-dropdown > :nth-child(2)').click()  
+      cy.get(selectorsList.secondItemCombobox).click()  
       cy.get(selectorsList.genericCombobox).eq(1).click() 
-      cy.get('.oxd-select-dropdown > :nth-child(3)').click()
+      cy.get(selectorsList.thirdItemCombobox).click()
+      cy.get(selectorsList.saveButton).eq(0).click()
+      cy.get('body').should('contain', 'Successfully Updated')
         
     })
 

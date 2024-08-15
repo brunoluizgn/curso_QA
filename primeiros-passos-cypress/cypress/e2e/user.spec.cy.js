@@ -1,9 +1,11 @@
 import userData from '../fixtures/user-data.json'
 import LoginPage from '../pages/loginPage'
 import DashboardPage from '../pages/dashboardPage'
+import MenuPage from '../pages/menuPage'
 
 const loginPage = new LoginPage()
 const dashboardPage = new DashboardPage()
+const menuPage = new MenuPage()
 
 describe('Orange HRM Tests', () => {
 
@@ -23,27 +25,25 @@ describe('Orange HRM Tests', () => {
     it.only('Info user update', () => {
       loginPage.accessLoginPage()
       loginPage.loginWithUser(userData.userSuccess.username, userData.userSuccess.password)
-      dashboardPage.location()
-
+      dashboardPage.dashboardPage()
+      menuPage.accessMyInfo()
 
       
-      // cy.location('pathname').should('equal', '/web/index.php/dashboard/index')
-      // cy.get(selectorsList.dashboardGrid)
-      // cy.get(selectorsList.myInfoButton).click()
-      // cy.get(selectorsList.firstNameField).clear().type('FirstNTest')
-      // cy.get(selectorsList.lastNameField).clear().type('LastNTest')
-      // cy.get(selectorsList.generiField).eq(3).clear().type('Employ')
-      // cy.get(selectorsList.generiField).eq(4).clear().type('OtherIdTest')
-      // cy.get(selectorsList.generiField).eq(5).clear().type('DriverTest')
-      // cy.get(selectorsList.dataField).eq(0).clear().type('2025-03-10')
-      // cy.get(selectorsList.saveButton).eq(0).click()
-      // cy.get('body').should('contain', 'Successfully Updated')
-      // cy.get(selectorsList.genericCombobox).eq(0).click()
-      // cy.get(selectorsList.secondItemCombobox).click()  
-      // cy.get(selectorsList.genericCombobox).eq(1).click() 
-      // cy.get(selectorsList.thirdItemCombobox).click()
-      // cy.get(selectorsList.saveButton).eq(0).click()
-      // cy.get('body').should('contain', 'Successfully Updated')
+      cy.get(selectorsList.firstNameField).clear().type('FirstNTest')
+      cy.get(selectorsList.lastNameField).clear().type('LastNTest')
+      cy.get(selectorsList.generiField).eq(3).clear().type('Employ')
+      cy.get(selectorsList.generiField).eq(4).clear().type('OtherIdTest')
+      cy.get(selectorsList.generiField).eq(5).clear().type('DriverTest')
+      cy.get(selectorsList.dataField).eq(0).clear().type('2025-03-10')
+      cy.get(selectorsList.saveButton).eq(0).click()
+      cy.get('body').should('contain', 'Successfully Updated')
+      cy.get(selectorsList.genericCombobox).eq(0).click()
+      cy.get(selectorsList.secondItemCombobox).click()  
+      cy.get(selectorsList.genericCombobox).eq(1).click() 
+      cy.get(selectorsList.thirdItemCombobox).click()
+      cy.get(selectorsList.saveButton).eq(0).click()
+      cy.get('body').should('contain', 'Successfully Updated')
+      menuPage.accessBuzz()
         
     })
 

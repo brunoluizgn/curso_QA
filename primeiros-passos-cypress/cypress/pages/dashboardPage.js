@@ -12,7 +12,7 @@ class DashboardPage {
 
     }
 
-    location() {
+    dashboardPage() {
 
       cy.location('pathname').should('equal', '/web/index.php/dashboard/index')
       cy.get(this.selectorsList().dashboardGrid)

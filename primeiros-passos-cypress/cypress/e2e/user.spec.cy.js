@@ -2,10 +2,13 @@ import userData from '../fixtures/user-data.json'
 import LoginPage from '../pages/loginPage'
 import DashboardPage from '../pages/dashboardPage'
 import MenuPage from '../pages/menuPage'
+import MyInfo from '../pages/myInfo'
+
 
 const loginPage = new LoginPage()
 const dashboardPage = new DashboardPage()
 const menuPage = new MenuPage()
+const myInfo = new MyInfo()
 
 describe('Orange HRM Tests', () => {
 
@@ -27,9 +30,10 @@ describe('Orange HRM Tests', () => {
       loginPage.loginWithUser(userData.userSuccess.username, userData.userSuccess.password)
       dashboardPage.dashboardPage()
       menuPage.accessMyInfo()
+      myInfo.updateMyInfo()
 
       
-      cy.get(selectorsList.firstNameField).clear().type('FirstNTest')
+      // cy.get(selectorsList.firstNameField).clear().type('FirstNTest')
       cy.get(selectorsList.lastNameField).clear().type('LastNTest')
       cy.get(selectorsList.generiField).eq(3).clear().type('Employ')
       cy.get(selectorsList.generiField).eq(4).clear().type('OtherIdTest')

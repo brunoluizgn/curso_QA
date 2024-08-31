@@ -23,46 +23,57 @@ class MenuPage {
     }
 
     accessMyInfo() {
+
         cy.get(this.selectorsList().myInfoButton).click()
     }
 
     accessAdmin() {
+
         cy.get(this.selectorsList().adminButton).click()
     }
 
     accessPim() {
+
         cy.get(this.selectorsList().pimButton).click()
     }
 
     accessLeave() {
+
         cy.get(this.selectorsList().leaveButton).click()
     }
 
     accessTime() {
+
         cy.get(this.selectorsList().leaveButton).click()
     }
 
     accessRecruitment() {
+
         cy.get(this.selectorsList().recruitmentButton).click()
     }
 
     accessPerformance() {
+
         cy.get(this.selectorsList().performanceButton).click()
     }
 
     accessDirectory() {
+
         cy.get(this.selectorsList().directoryButton).click()
     }
 
     accessMainTenance() {
+
         cy.get(this.selectorsList().maintenanceButton).click()
     }
 
     accessClain() {
+
         cy.get(this.selectorsList().clainButton).click()
     }
 
     accessBuzz() {
+        
         cy.get(this.selectorsList().buzzButton).click()
     }
 }

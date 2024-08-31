@@ -47,7 +47,13 @@ class MyInfo {
         cy.get('body').should('contain', 'Successfully Updated')
         
     }
+    
+    subimitButton() {
 
+        cy.get(this.selectorsList().saveButton).eq(0).click()
+        cy.get('body').should('contain', 'Successfully Updated')
+
+    }
 }
 
 export default MyInfo

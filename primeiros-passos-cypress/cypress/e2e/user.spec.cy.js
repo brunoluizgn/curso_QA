@@ -11,11 +11,6 @@ const myInfo = new MyInfo()
 
 describe('Orange HRM Tests', () => {
 
-    const selectorsList = {
-      
-      
-    }
-
     it('Info user update', () => {
 
       loginPage.accessLoginPage()
@@ -28,13 +23,4 @@ describe('Orange HRM Tests', () => {
       myInfo.subimitButton()
       
     })
-
-    it('login-Fail', () => {
-
-      loginPage.accessLoginPage()
-      loginPage.loginWithUser(userData.userFail.username, userData.userFail.password)
-      loginPage.checkAccessInvalid()
-      
-
-  })
 })

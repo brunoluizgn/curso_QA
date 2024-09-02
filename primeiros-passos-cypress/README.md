@@ -8,15 +8,15 @@
 npm install
 ```
 
-## > É necessário ter o **Nodejs** instalado
+> É necessário ter o **Nodejs** instalado
 
 # Running
 ```bash
 npm cypress open 
 ```
-## > utiliza esse comando para abrir o Cypress
+> utiliza esse comando para abrir o Cypress
 
 ```bash
 npm cypress run
 ```
-## > Para abrir via terminal
+> Para abrir via terminal
